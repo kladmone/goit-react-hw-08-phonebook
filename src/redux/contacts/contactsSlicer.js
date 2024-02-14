@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { isAnyOf } from '@reduxjs/toolkit';
 import { addNewContact, deleteContacts, fetchContacts } from 'services/api';
 
 export const apiGetContacts = createAsyncThunk(
@@ -37,14 +38,6 @@ export const deleteContact = createAsyncThunk(
   }
 );
 
-const statusPending = state => {
-  state.isLoading = true;
-};
-const statusRejected = (state, action) => {
-  state.isLoading = false;
-  state.error = action.payload;
-};
-
 const initialState = {
   contacts: {
     items: [],
@@ -64,21 +57,16 @@ export const contactsSlicer = createSlice({
   },
   extraReducers: builder => {
     builder
-      .addCase(apiGetContacts.pending, statusPending)
       .addCase(apiGetContacts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.contacts.items = action.payload;
       })
-      .addCase(addContact.pending, statusPending)
-      .addCase(addContact.rejected, statusRejected)
       .addCase(addContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.contacts.items.push(action.payload);
       })
-      .addCase(deleteContact.pending, statusPending)
-      .addCase(deleteContact.rejected, statusRejected)
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -86,7 +74,24 @@ export const contactsSlicer = createSlice({
           contact => contact.id === action.payload.id
         );
         state.contacts.items.splice(index, 1);
-      });
+      })
+      .addMatcher(
+        isAnyOf(
+          apiGetContacts.pending,
+          addContact.pending,
+          deleteContact.pending
+        ),
+        state => {
+          state.isLoading = true;
+        }
+      )
+      .addMatcher(
+        isAnyOf(addContact.rejected, deleteContact.rejected),
+        (state, action) => {
+          state.isLoading = false;
+          state.error = action.payload;
+        }
+      );
   },
 });
 

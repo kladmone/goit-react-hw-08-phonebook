@@ -1,0 +1,49 @@
+.homeTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 40px;
+  font-weight: 550;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 50px;
+}
+.list {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+.registerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 7px;
+  font-weight: 500;
+  color: rgb(203, 230, 255);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.registerBtn:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.contacts {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 150px;
+  height: 40px;
+  text-decoration: none;
+  font-size: 25px;
+  border-radius: 7px;
+  font-weight: 500;
+  color: rgb(203, 230, 255);
+  transition: box-shadow 0.3s ease-in-out;
+}
