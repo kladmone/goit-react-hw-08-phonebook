@@ -1,31 +1,30 @@
-import React, { Suspense } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
 import css from './Navigation.module.css';
+import { NavLink, Outlet } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import { useSelector } from 'react-redux';
+import { selectAuthIsLoggedIn } from '../../redux/auth/authSlice.selectors';
+
 const Navigation = () => {
+  const isLoggedIn = useSelector(selectAuthIsLoggedIn);
   return (
     <div>
       <header className={css.header}>
         <NavLink to="/" className={css.btn}>
           Home
         </NavLink>
-        {/* {isLoggedin && ( */}
-        <>
-          <NavLink to="/contacts" className={css.btn}>
-            Contacts
-          </NavLink>
-          <span className={css.user_box}>
-            {/* <p className={css.user_email}>{userEmail}</p> */}
-            <button
-              className={css.btn_logout}
-              // onClick={handleLogOut}
-              // disabled={isLoading}
-              type="button"
-            >
-              Log out
-            </button>
-          </span>
-        </>
-        {/* )} */}
+        {isLoggedIn && (
+          <>
+            <NavLink to="/contacts" className={css.btn}>
+              Contacts
+            </NavLink>
+            <span className={css.user_box}>
+              <p className={css.user_email}></p>
+              <button className={css.btn_logout} type="button">
+                Log out
+              </button>
+            </span>
+          </>
+        )}
       </header>
       <main>
         <Suspense fallback={null}>

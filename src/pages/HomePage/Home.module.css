@@ -26,10 +26,11 @@
   font-size: 25px;
   border-radius: 7px;
   font-weight: 500;
-  color: rgb(203, 230, 255);
-  transition: box-shadow 0.3s ease-in-out;
+  color: #fff;
+  transition: box-shadow 0.2s ease-in-out;
 }
 .registerBtn:hover {
+  background-color: #ff9362;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 .contacts {
