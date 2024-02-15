@@ -42,6 +42,7 @@ const initialState = {
   error: null,
   isLoading: false,
 };
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,

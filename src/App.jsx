@@ -9,11 +9,12 @@ import Navigation from './components/Navigation/Navigation';
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigation />} />
-      <Route index element={<Home />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="*" element={<Navigate to="/" />} />
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Route>
     </Routes>
   );
 };
