@@ -1,5 +1,5 @@
-export const selectAuthToken = state => state.auth.token;
-export const selectAuthUserData = state => state.auth.userData;
-export const selectAuthIsLoggedIn = state => state.auth.isLoggedIn;
-export const selectAuthError = state => state.auth.error;
-export const selectAuthIsLoading = state => state.auth.isLoading;
+export const selectAuthToken = state => state.user.token;
+export const selectAuthUserData = state => state.user.userData;
+export const selectAuthIsLoggedIn = state => state.user.isLoggedIn;
+export const selectAuthError = state => state.user.error;
+export const selectAuthIsLoading = state => state.user.isLoading;

@@ -17,9 +17,9 @@ const Navigation = () => {
             <NavLink to="/contacts" className={css.btn}>
               Contacts
             </NavLink>
-            <span className={css.user_box}>
-              <p className={css.user_email}></p>
-              <button className={css.btn_logout} type="button">
+            <span className={css.userContainer}>
+              <p className={css.userEmail}>some_eamil@gmail.com</p>
+              <button className={css.btnLogout} type="button">
                 Log out
               </button>
             </span>

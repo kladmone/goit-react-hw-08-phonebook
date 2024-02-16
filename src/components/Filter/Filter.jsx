@@ -1,13 +1,15 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../../redux/contacts/contactsSlicer';
 import css from './Filter.module.css';
+import { selectFilter } from '../../redux/selectors';
 
-const Filter = ({ filter }) => {
+export const Filter = () => {
   const dispatch = useDispatch();
+  const filter = useSelector(selectFilter);
+
   const handleChangeFilter = event => {
     const value = event.target.value;
-    const action = setFilter(value);
-    dispatch(action);
+    dispatch(setFilter(value));
   };
 
   return (
@@ -23,5 +25,3 @@ const Filter = ({ filter }) => {
     </div>
   );
 };
-
-export { Filter };
