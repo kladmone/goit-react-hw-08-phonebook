@@ -36,19 +36,34 @@ export const AddContactForm = () => {
   };
 
   return (
-    <div className={css.phonebookContainer}>
-      <h1>Phonebook</h1>
-      <form className={css.form} onSubmit={handleFormSubmit}>
-        <label className={css.formLabel}>
-          <span>Name</span>
-          <input type="text" name="name" required />
-        </label>
-        <label className={css.formLabel}>
-          <span>Number</span>
-          <input type="tel" name="number" required />
-        </label>
-        <button type="submit">Add contact</button>
-      </form>
+    <div className={css.container}>
+      <div className={css.phonebookContainer}>
+        <h1 className={css.addContactTitle}>Save your contacts here</h1>
+        <form onSubmit={handleFormSubmit}>
+          <label className={css.formLabel}>
+            <span>Name</span>
+            <input
+              className={css.addContactInput}
+              type="text"
+              name="name"
+              placeholder="Alex"
+              required
+            />
+          </label>
+          <label className={css.formLabel}>
+            <span>Number</span>
+            <input
+              className={css.addContactInput}
+              type="tel"
+              name="number"
+              required
+            />
+          </label>
+          <button className={css.addBtn} type="submit">
+            Add contact
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,12 +1,15 @@
 import { NavLink } from 'react-router-dom';
 import css from './Home.module.css';
+import { useSelector } from 'react-redux';
+import { selectAuthIsLoggedIn } from '../../redux/auth/authSlice.selectors';
 const Home = () => {
+  const isLoggedIn = useSelector(selectAuthIsLoggedIn);
   return (
     <div>
-      <h1 className={css.homeTitle}>
-        Phonebook store your contacts in a convenient place
-      </h1>
-      <>
+      <div className={css.titleBox}>
+        <h1 className={css.homeTitle}>Phonebook</h1>
+      </div>
+      {!isLoggedIn ? (
         <ul className={css.list}>
           <li>
             <NavLink to="/register" className={css.registerBtn}>
@@ -18,13 +21,8 @@ const Home = () => {
               Login
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/contacts" className={css.contacts}>
-              Contacts
-            </NavLink>
-          </li>
         </ul>
-      </>
+      ) : null}
     </div>
   );
 };

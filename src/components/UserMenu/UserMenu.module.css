@@ -1,0 +1,49 @@
+.logOutBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  font-size: 17px;
+  border-radius: 7px;
+  border-style: none;
+  font-weight: 500;
+  background-color: transparent;
+  color: aliceblue;
+  transition: box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+.logOutBtn:hover {
+  background-color: #f97436;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.userContainer {
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+  align-items: center;
+  justify-content: center;
+}
+.userEmail {
+  display: inline-block;
+  position: relative;
+  color: #ffff;
+  font-weight: 700;
+  font-size: 18px;
+}
+.userEmail:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #f97436;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.userEmail:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

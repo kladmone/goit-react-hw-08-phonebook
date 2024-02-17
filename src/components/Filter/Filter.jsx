@@ -13,9 +13,10 @@ export const Filter = () => {
   };
 
   return (
-    <div className={css.filter}>
-      <p>Find contacts by name</p>
+    <div className={css.filterContainer}>
+      <h3 className={css.filterTitle}>Find contacts by name</h3>
       <input
+        className={css.filterInput}
         value={filter}
         onChange={handleChangeFilter}
         type="text"

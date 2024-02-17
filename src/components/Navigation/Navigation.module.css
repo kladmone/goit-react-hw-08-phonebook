@@ -22,10 +22,6 @@
 .btn:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
-.userContainer {
-  display: flex;
-  gap: 5px;
+.userBox {
   margin-left: auto;
-  align-items: center;
-  justify-content: center;
 }

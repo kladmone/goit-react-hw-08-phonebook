@@ -1,13 +1,18 @@
 .homeTitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-size: 40px;
-  font-weight: 550;
+  font-size: 120px;
+  text-transform: uppercase;
+  font-family: 'Gambetta', serif;
+  letter-spacing: -3px;
+  transition: 700ms ease;
+  font-variation-settings: 'wght' 311;
+  margin-bottom: 0.8rem;
+  color: #f96621;
+  outline: none;
   text-align: center;
-  margin-top: 200px;
-  margin-bottom: 50px;
+}
+.homeTitle:hover {
+  font-variation-settings: 'wght' 582;
+  letter-spacing: 2px;
 }
 .list {
   display: flex;
@@ -33,7 +38,7 @@
   background-color: #ff9362;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
-.contacts {
+.contactsBtn {
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -45,6 +50,18 @@
   font-size: 25px;
   border-radius: 7px;
   font-weight: 500;
-  color: rgb(203, 230, 255);
+  color: #fff;
   transition: box-shadow 0.3s ease-in-out;
+}
+.contactsBtn:hover {
+  background-color: #ff9362;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.titleBox {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
