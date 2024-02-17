@@ -11,6 +11,7 @@ const ContactList = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
   const contacts = useSelector(selectContacts);
+  console.log(contacts);
 
   useEffect(() => {
     dispatch(apiGetContacts());
