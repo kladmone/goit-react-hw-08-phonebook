@@ -1,15 +1,51 @@
 .delBtn {
-  background-color: white;
+  border: none;
+  gap: 10px;
+  width: 60px;
+  height: 25px;
   border-radius: 10px;
-  margin-left: 5px;
+  cursor: pointer;
+
+  background-color: transparent;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out;
 }
 .delBtn:hover {
   background-color: red;
   color: white;
 }
 .contactsList {
-  display: flex;
-  flex-direction: column;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  margin: 15px auto;
+  padding: 1px;
+  transition: box-shadow 0.3s ease-in-out;
+  width: 300px;
+}
+.listTitle {
+  color: #99cfff;
+  font-size: 2em;
   justify-content: center;
+  display: flex;
+  margin: 10px;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+}
+.contactName {
+  color: #f97436;
+  font-size: 20px;
+}
+.contactiLstUl {
+  list-style: none;
+}
+.number {
+  color: black;
+  font-size: 17px;
   align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.listItem {
+  margin-bottom: 5px;
 }

@@ -25,20 +25,24 @@ const ContactList = () => {
   );
   return (
     <div className={css.contactsList}>
-      <h2>Contacts</h2>
-      <ul>
-        {filteredContacts.map(contact => (
-          <li key={contact.id}>
-            {contact.name}: {contact.number}
-            <button
-              className={css.delBtn}
-              onClick={() => handleDeleteContact(contact.id)}
-            >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+      {contacts.length === 0 ? (
+        <h3 className={css.listTitle}>You haven't added contacts yet!</h3>
+      ) : (
+        <ul className={css.contactiLstUl}>
+          {filteredContacts.map(contact => (
+            <li className={css.listItem} key={contact.id}>
+              <span className={css.contactName}>{contact.name}:</span>
+              <span className={css.number}>{contact.number}</span>
+              <button
+                className={css.delBtn}
+                onClick={() => handleDeleteContact(contact.id)}
+              >
+                Remove
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

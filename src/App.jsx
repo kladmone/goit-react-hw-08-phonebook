@@ -9,6 +9,7 @@ import Contacts from 'pages/Contacts';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { apiRefreshUser } from './redux/auth/authSlice';
+import { PrivateRoute, RestrictedRoute } from 'components';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -21,9 +22,30 @@ export const App = () => {
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute>
+              <Register />
+            </RestrictedRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute>
+              <Login />
+            </RestrictedRoute>
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute>
+              <Contacts />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>
